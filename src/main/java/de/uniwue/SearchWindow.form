@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<form xmlns="http://www.intellij.com/uidesigner/form/" version="1" bind-to-class="de.uniwue.SearchWindow">
+  <grid id="27dc6" binding="mainPanel" layout-manager="GridLayoutManager" row-count="5" column-count="3" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+    <margin top="0" left="0" bottom="0" right="0"/>
+    <constraints>
+      <xy x="20" y="20" width="511" height="423"/>
+    </constraints>
+    <properties/>
+    <border type="none"/>
+    <children>
+      <component id="aeb" class="javax.swing.JComboBox" binding="queryTypeComboBox">
+        <constraints>
+          <grid row="4" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="2" anchor="8" fill="1" indent="0" use-parent-layout="false">
+            <minimum-size width="50" height="-1"/>
+          </grid>
+        </constraints>
+        <properties/>
+      </component>
+      <vspacer id="aac84">
+        <constraints>
+          <grid row="2" column="1" row-span="2" col-span="1" vsize-policy="6" hsize-policy="1" anchor="0" fill="2" indent="0" use-parent-layout="false">
+            <minimum-size width="-1" height="80"/>
+            <preferred-size width="129" height="209"/>
+          </grid>
+        </constraints>
+      </vspacer>
+      <component id="3ed63" class="javax.swing.JTextField" binding="searchTextField">
+        <constraints>
+          <grid row="4" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="7" anchor="0" fill="1" indent="0" use-parent-layout="false">
+            <preferred-size width="129" height="30"/>
+          </grid>
+        </constraints>
+        <properties/>
+      </component>
+      <component id="14e71" class="javax.swing.JButton" binding="searchBtn">
+        <constraints>
+          <grid row="4" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <text value="Search"/>
+        </properties>
+      </component>
+      <component id="e8060" class="javax.swing.JButton" binding="addCorpusBtn">
+        <constraints>
+          <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="2" anchor="1" fill="1" indent="0" use-parent-layout="false">
+            <minimum-size width="100" height="-1"/>
+            <preferred-size width="100" height="20"/>
+            <maximum-size width="100" height="20"/>
+          </grid>
+        </constraints>
+        <properties>
+          <text value="Add"/>
+          <toolTipText value="Open File Manager to add a corpus Folder"/>
+          <verticalAlignment value="0"/>
+        </properties>
+      </component>
+      <component id="4153" class="javax.swing.JButton" binding="remCorpusBtn">
+        <constraints>
+          <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="2" anchor="1" fill="1" indent="0" use-parent-layout="false">
+            <minimum-size width="100" height="-1"/>
+            <preferred-size width="100" height="20"/>
+            <maximum-size width="100" height="20"/>
+          </grid>
+        </constraints>
+        <properties>
+          <text value="Remove"/>
+          <toolTipText value="removes selected corpus folder from list"/>
+        </properties>
+      </component>
+      <scrollpane id="fa220">
+        <constraints>
+          <grid row="0" column="1" row-span="2" col-span="2" vsize-policy="7" hsize-policy="7" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties/>
+        <border type="none"/>
+        <children>
+          <component id="3c16b" class="javax.swing.JList" binding="corpusList">
+            <constraints/>
+            <properties>
+              <model/>
+              <selectionForeground color="-16777216"/>
+              <selectionMode value="0"/>
+              <toolTipText value="corpus folder(s) to be searched"/>
+            </properties>
+          </component>
+        </children>
+      </scrollpane>
+    </children>
+  </grid>
+</form>
