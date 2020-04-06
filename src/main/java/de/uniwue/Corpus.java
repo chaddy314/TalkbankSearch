@@ -13,9 +13,8 @@ public class Corpus {
         this.utterances = new TreeMap<String,Utterance>();
     }
 
-    public int putCorpus(String path) {
+    public int putCorpus(File dir) {
         int files = 0;  //number of files add, -1 if path not a folder
-        File dir = new File(path);
         if(!dir.isDirectory()) {
             System.out.println("Not a Directory");
             return -1;
@@ -25,6 +24,7 @@ public class Corpus {
         try {
             for(File file : FilesInDir) {
                 putFile(file);
+                System.out.println("File " + file.getName() + " added to Corpus");
                 files++;
             }
         } catch (Exception e) {
@@ -34,7 +34,7 @@ public class Corpus {
     }
 
     public void putFile(File file) {
-        String ID;
+        String ID = file.getName();
         String speaker;
         String statement;
         int[] timestamp;
@@ -51,13 +51,36 @@ public class Corpus {
                 } else if (line.startsWith("*")) {
                     String tempLines[] = line.split(":",2);
                     speaker = tempLines[0];
-                    if(Pattern.compile("\\d+_\\d+").matcher(tempLines[1]).find()) {
-                        timestamp = parseTimestamp(Pattern.compile("(\\d+_\\d+)").matcher(tempLines[1]).group(1));
-
-                    } else {
-
+                    statement = tempLines[1];
+                    line = tempLines[1];
+                    while (!Pattern.compile("\\d+_\\d+").matcher(line).find()) {
+                        line = reader.readLine();
+                        statement += line;
                     }
+                    statement += line;
+                    timestamp = parseTimestamp(Pattern.compile("(\\d+_\\d+)").matcher(tempLines[1]).group(1));
+                    utterances.put(ID,new Utterance(ID,speaker,statement,timestamp[0],timestamp[1]));
+                    /*Üif(Pattern.compile("\\d+_\\d+").matcher(tempLines[1]).find()) {
+                        timestamp = parseTimestamp(Pattern.compile("(\\d+_\\d+)").matcher(tempLines[1]).group(1));
+                        utterances.put(ID,new Utterance(ID,speaker,statement,timestamp[0],timestamp[1]));
+                    } else {
+                        line = reader.readLine();
+                        while(line != null && !Pattern.compile("\\d+_\\d+").matcher(tempLines[1]).find()) {
+                            statement += line;
+                            line = reader.readLine();
+                        }
+                        statement += line;
+                        timestamp = parseTimestamp(Pattern.compile("(\\d+_\\d+)").matcher(tempLines[1]).group(1));
+                        utterances.put(ID,new Utterance(ID,speaker,statement,timestamp[0],timestamp[1]));
+                    }*/
+                    line = reader.readLine();
+                } else {
+                    System.out.println("YOU SHOULD NOT BE HERE");
+                    System.out.println("line is" + line);
                 }
+                System.out.println("Statement is:");
+                System.out.println(utterances.get(ID).getSpeaker() + " : " + utterances.get(ID).getStatement());
+                System.out.println();
             }
         } catch (IOException e) {
             e.printStackTrace();;

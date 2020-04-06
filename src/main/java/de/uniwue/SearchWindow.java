@@ -26,6 +26,7 @@ public class SearchWindow {
     private int listIndex = 0;
 
     private ArrayList<File> corpusFolders;
+    private static Corpus tbCorpus;
 
     public static void main(String[] args) {
 
@@ -35,6 +36,7 @@ public class SearchWindow {
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.pack();
         frame.setVisible(true);
+
     }
 
     public void initialize() {
@@ -46,6 +48,8 @@ public class SearchWindow {
         listModel = new DefaultListModel();
         //corpusList = new JList(listModel);
         corpusList.setModel(listModel);
+
+        tbCorpus = new Corpus();
     }
 
     public SearchWindow() {
@@ -110,6 +114,9 @@ public class SearchWindow {
                     listModel.addElement(chosenFile.toString());
                     //corpusList = new JList(listModel);
                     corpusFolders.add(chosenFile);
+
+                    int filesAdded = tbCorpus.putCorpus(chooser.getSelectedFile());
+                    System.out.println("Total number of files added to Corpus: "+ filesAdded);
                 }
                 else {
                     System.out.println("No Selection ");
