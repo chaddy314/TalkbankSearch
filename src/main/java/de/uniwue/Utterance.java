@@ -41,4 +41,14 @@ public class Utterance {
         timestamp[1] = end;
         return timestamp;
     }
+
+    public String toString() {
+        String uttString = "";
+        uttString+=("file id   : " + ID + "\n");
+        uttString+=("speaker   : " + speaker + "\n");
+        uttString+=("statement : " + statement + "\n");
+        uttString+=("timestart : " + start + "\n");
+        uttString+=("timeEND   : " + end + "\n");
+        return uttString;
+    }
 }
