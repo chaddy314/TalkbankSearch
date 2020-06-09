@@ -28,7 +28,7 @@
         <constraints>
           <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="2" anchor="1" fill="1" indent="0" use-parent-layout="false">
             <minimum-size width="100" height="-1"/>
-            <preferred-size width="105" height="20"/>
+            <preferred-size width="105" height="28"/>
             <maximum-size width="100" height="20"/>
           </grid>
         </constraints>
@@ -88,20 +88,23 @@
       </scrollpane>
       <component id="d9dde" class="javax.swing.JButton" binding="test_btn">
         <constraints>
-          <grid row="2" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false">
+          <grid row="2" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="1" fill="1" indent="0" use-parent-layout="false">
             <preferred-size width="105" height="30"/>
           </grid>
         </constraints>
         <properties>
           <text value="list utt"/>
+          <visible value="false"/>
         </properties>
       </component>
       <component id="3a367" class="javax.swing.JButton" binding="clearBtn">
         <constraints>
-          <grid row="3" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+          <grid row="3" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="2" fill="1" indent="0" use-parent-layout="false"/>
         </constraints>
         <properties>
           <text value="Clear"/>
+          <verticalAlignment value="0"/>
+          <verticalTextPosition value="0"/>
         </properties>
       </component>
       <component id="21ef4" class="javax.swing.JCheckBox" binding="useLiteralCheckBox" default-binding="true">
