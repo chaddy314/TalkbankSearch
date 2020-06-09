@@ -20,7 +20,24 @@
         </plugins>
     </build>
     <dependencies>
+        <!-- https://mvnrepository.com/artifact/org.apache.commons/commons-lang3 -->
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-lang3</artifactId>
+            <version>3.10</version>
+        </dependency>
+        <!-- https://mvnrepository.com/artifact/javazoom/jlayer -->
+        <dependency>
+            <groupId>javazoom</groupId>
+            <artifactId>jlayer</artifactId>
+            <version>1.0.1</version>
+        </dependency>
 
+        <dependency>
+            <groupId>com.mpatric</groupId>
+            <artifactId>mp3agic</artifactId>
+            <version>0.9.1</version>
+        </dependency>
 
     </dependencies>
     <properties>

@@ -3,27 +3,11 @@
   <grid id="27dc6" binding="mainPanel" layout-manager="GridLayoutManager" row-count="5" column-count="3" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
     <margin top="0" left="0" bottom="0" right="0"/>
     <constraints>
-      <xy x="20" y="20" width="511" height="423"/>
+      <xy x="20" y="20" width="809" height="713"/>
     </constraints>
     <properties/>
     <border type="none"/>
     <children>
-      <component id="aeb" class="javax.swing.JComboBox" binding="queryTypeComboBox">
-        <constraints>
-          <grid row="4" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="2" anchor="8" fill="1" indent="0" use-parent-layout="false">
-            <minimum-size width="50" height="-1"/>
-          </grid>
-        </constraints>
-        <properties/>
-      </component>
-      <vspacer id="aac84">
-        <constraints>
-          <grid row="2" column="1" row-span="2" col-span="1" vsize-policy="6" hsize-policy="1" anchor="0" fill="2" indent="0" use-parent-layout="false">
-            <minimum-size width="-1" height="80"/>
-            <preferred-size width="129" height="209"/>
-          </grid>
-        </constraints>
-      </vspacer>
       <component id="3ed63" class="javax.swing.JTextField" binding="searchTextField">
         <constraints>
           <grid row="4" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="7" anchor="0" fill="1" indent="0" use-parent-layout="false">
@@ -44,7 +28,7 @@
         <constraints>
           <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="2" anchor="1" fill="1" indent="0" use-parent-layout="false">
             <minimum-size width="100" height="-1"/>
-            <preferred-size width="100" height="20"/>
+            <preferred-size width="105" height="20"/>
             <maximum-size width="100" height="20"/>
           </grid>
         </constraints>
@@ -58,7 +42,7 @@
         <constraints>
           <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="2" anchor="1" fill="1" indent="0" use-parent-layout="false">
             <minimum-size width="100" height="-1"/>
-            <preferred-size width="100" height="20"/>
+            <preferred-size width="105" height="8"/>
             <maximum-size width="100" height="20"/>
           </grid>
         </constraints>
@@ -67,7 +51,7 @@
           <toolTipText value="removes selected corpus folder from list"/>
         </properties>
       </component>
-      <scrollpane id="fa220">
+      <scrollpane id="fa220" binding="listPane">
         <constraints>
           <grid row="0" column="1" row-span="2" col-span="2" vsize-policy="7" hsize-policy="7" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
         </constraints>
@@ -85,6 +69,49 @@
           </component>
         </children>
       </scrollpane>
+      <scrollpane id="4d192" binding="resultPane">
+        <constraints>
+          <grid row="2" column="1" row-span="2" col-span="2" vsize-policy="7" hsize-policy="7" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties/>
+        <border type="none"/>
+        <children>
+          <component id="cbaa0" class="javax.swing.JTable" binding="resultTable">
+            <constraints/>
+            <properties/>
+            <clientProperties>
+              <JTable.autoStartsEdit class="java.lang.Boolean" value="true"/>
+              <terminateEditOnFocusLost class="java.lang.Boolean" value="true"/>
+            </clientProperties>
+          </component>
+        </children>
+      </scrollpane>
+      <component id="d9dde" class="javax.swing.JButton" binding="test_btn">
+        <constraints>
+          <grid row="2" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false">
+            <preferred-size width="105" height="30"/>
+          </grid>
+        </constraints>
+        <properties>
+          <text value="list utt"/>
+        </properties>
+      </component>
+      <component id="3a367" class="javax.swing.JButton" binding="clearBtn">
+        <constraints>
+          <grid row="3" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <text value="Clear"/>
+        </properties>
+      </component>
+      <component id="21ef4" class="javax.swing.JCheckBox" binding="useLiteralCheckBox" default-binding="true">
+        <constraints>
+          <grid row="4" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <text value="Use Literal"/>
+        </properties>
+      </component>
     </children>
   </grid>
 </form>
